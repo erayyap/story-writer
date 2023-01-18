@@ -1,0 +1,4 @@
+# ninja log v5
+4	323	6957886508818264	build.ninja	4a4ed7cb0fb6493a
+0	1043	6956144067702847	CMakeFiles/Story_Maker.dir/main.cpp.obj	9deef246df426964
+13	918	6956144066431790	CMakeFiles/Story_Maker.dir/Equation.cpp.obj	e6ecffaa1bab499c
