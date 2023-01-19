@@ -4,6 +4,10 @@
 #include "BoolScript.h"
 
 BoolScript::BoolScript(std::unordered_map<std::string, int> *var, std::string arg): Script(var)  {
+    if(arg == "") {
+        ope == TRUE;
+        return;
+    }
     int index = 0;
     int space = 0;
     if (arg.find("==") != std::string::npos) {

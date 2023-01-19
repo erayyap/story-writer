@@ -12,7 +12,8 @@ enum Compare {
     GREATER,
     LOWER,
     EGREATER,
-    ELOWER
+    ELOWER,
+    TRUE
 };
 
 class BoolScript: public Script {

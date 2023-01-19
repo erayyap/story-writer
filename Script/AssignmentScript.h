@@ -10,6 +10,9 @@
 class BoolScript: public Script {
 public:
     BoolScript(std::unordered_map<std::string,int>* var, std::string a, Equation* e) : Script(var), argument(a), equation(e){};
+
+    BoolScript(std::unordered_map<std::string, int> *pMap, std::string basicString);
+
     bool run() override {
         (*vars)[argument] = equation->calculate();
         return true;
