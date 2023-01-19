@@ -5,6 +5,7 @@
 #ifndef STORY_MAKER_DISPLAYSCRIPT_H
 #define STORY_MAKER_DISPLAYSCRIPT_H
 #include "Script.h"
+#include <iostream>
 
 class DisplayScript: public Script {
 public:

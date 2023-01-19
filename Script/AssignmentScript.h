@@ -7,9 +7,9 @@
 #include "../Equation.h"
 #include "Script.h"
 
-class CaseScript: public Script {
+class BoolScript: public Script {
 public:
-    CaseScript(std::unordered_map<std::string,int>* var, std::string a, Equation* e) : Script(var), argument(a), equation(e){};
+    BoolScript(std::unordered_map<std::string,int>* var, std::string a, Equation* e) : Script(var), argument(a), equation(e){};
     bool run() override {
         (*vars)[argument] = equation->calculate();
         return true;

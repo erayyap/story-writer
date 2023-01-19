@@ -2,8 +2,8 @@
 // Created by Eray Yapağcı on 18/01/2023.
 //
 
-#ifndef STORY_MAKER_CASESCRIPT_H
-#define STORY_MAKER_CASESCRIPT_H
+#ifndef STORY_MAKER_BOOLSCRIPT_H
+#define STORY_MAKER_BOOLSCRIPT_H
 #include "../Equation.h"
 #include "Script.h"
 
@@ -15,10 +15,10 @@ enum Compare {
     ELOWER
 };
 
-class CaseScript: public Script {
+class BoolScript: public Script {
 public:
-    CaseScript(std::unordered_map<std::string, int> *var,
-               Equation *e1, Equation *e2, std::string ope, ScriptType s);
+    BoolScript(std::unordered_map<std::string, int> *var,
+               std::string arg);
     bool run() override;
 protected:
     Equation* LHS;
@@ -27,4 +27,4 @@ protected:
 
 };
 
-#endif //STORY_MAKER_CASESCRIPT_H
+#endif //STORY_MAKER_BOOLSCRIPT_H

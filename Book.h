@@ -5,6 +5,7 @@
 #ifndef STORY_MAKER_BOOK_H
 #define STORY_MAKER_BOOK_H
 #include <unordered_map>
+#include <iostream>
 #include "Page.h"
 class Book {
 
