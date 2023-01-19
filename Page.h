@@ -6,14 +6,14 @@
 #define STORY_MAKER_PAGE_H
 #include <string>
 #include <vector>
-#include "Script/Script.h"
+#include "Script/ScriptVector.h"
 class Page {
 public:
     void run();
 
 private:
     std::string title;
-    std::vector<Script>* script;
+    ScriptVector* script;
     std::vector<Page*>* from;
 
 };

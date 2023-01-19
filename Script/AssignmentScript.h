@@ -4,14 +4,12 @@
 
 #ifndef STORY_MAKER_ASSIGNMENTSCRIPT_H
 #define STORY_MAKER_ASSIGNMENTSCRIPT_H
-#include "../Equation.h"
+#include "../Variable/Equation.h"
 #include "Script.h"
 
-class BoolScript: public Script {
+class AssignmentScript: public Script {
 public:
-    BoolScript(std::unordered_map<std::string,int>* var, std::string a, Equation* e) : Script(var), argument(a), equation(e){};
-
-    BoolScript(std::unordered_map<std::string, int> *pMap, std::string basicString);
+    AssignmentScript(std::unordered_map<std::string,int>* var, std::string a, Equation* e) : Script(var), argument(a), equation(e){};
 
     bool run() override {
         (*vars)[argument] = equation->calculate();

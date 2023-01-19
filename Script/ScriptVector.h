@@ -10,6 +10,8 @@
 #include "AssignmentScript.h"
 #include "BoolScript.h"
 #include "DisplayScript.h"
+#include "IfScript.h"
+#include "WhileScript.h"
 
 class ScriptVector {
 public:

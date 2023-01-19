@@ -2,6 +2,7 @@
 // Created by Eray Yapağcı on 17/01/2023.
 //
 #include "Equation.h"
+#include "Token.h"
 
 Equation::Equation(std::unordered_map<std::string,int>* var, std::string arg) {
     vars = var;
@@ -95,4 +96,5 @@ int Equation::calculate() {
     }
     return stack.top();
 }
+
 

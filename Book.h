@@ -8,6 +8,7 @@
 #include <iostream>
 #include "Page.h"
 class Book {
+    Book();
 
 private:
     std::unordered_map<std::string,int>* vars;

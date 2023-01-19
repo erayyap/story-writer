@@ -5,7 +5,20 @@
 #ifndef STORY_MAKER_DISPLAYSCRIPT_H
 #define STORY_MAKER_DISPLAYSCRIPT_H
 #include "Script.h"
+#include "../Variable/Equation.h"
 #include <iostream>
+
+union Disp {
+    explicit Disp(std::string s);
+    explicit Disp(Equation* e);
+    Disp(const Disp& d);
+    std::string text;
+    Equation* eq;
+
+    ~Disp() {
+        delete eq;
+    }
+};
 
 class DisplayScript: public Script {
 public:
@@ -14,6 +27,6 @@ public:
 
     bool run() override;
 private:
-    std::string display;
+    std::vector<Disp> display;
 };
 #endif //STORY_MAKER_DISPLAYSCRIPT_H

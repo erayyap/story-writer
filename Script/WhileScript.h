@@ -5,6 +5,7 @@
 #ifndef STORY_MAKER_WHILESCRIPT_H
 #define STORY_MAKER_WHILESCRIPT_H
 #include "ScriptVector.h"
+
 class WhileScript: public Script {
 public:
     WhileScript(std::unordered_map<std::string, int> *var, std::string arg, ScriptVector* sv): Script(var), boolean(new BoolScript(var, arg)), scriptVector(sv){};

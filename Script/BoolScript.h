@@ -4,7 +4,7 @@
 
 #ifndef STORY_MAKER_BOOLSCRIPT_H
 #define STORY_MAKER_BOOLSCRIPT_H
-#include "../Equation.h"
+#include "../Variable/Equation.h"
 #include "Script.h"
 
 enum Compare {

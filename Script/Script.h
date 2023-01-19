@@ -4,7 +4,7 @@
 
 #ifndef STORY_MAKER_SCRIPT_H
 #define STORY_MAKER_SCRIPT_H
-#include "../Equation.h"
+#include "../Variable/Equation.h"
 
 /*enum ScriptType {
     NORMAL,
