@@ -34,7 +34,7 @@ BoolScript::BoolScript(std::unordered_map<std::string, int> *var, std::string ar
         index = arg.find("<");
         space = 1;
         ope = LOWER;
-    } else if(arg.find(">") != std::string::npos) {
+    } else if(arg.find('>') != std::string::npos) {
         index = arg.find(">");
         space = 1;
         ope = GREATER;

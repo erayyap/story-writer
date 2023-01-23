@@ -9,14 +9,16 @@
 
 class AssignmentScript: public Script {
 public:
-    AssignmentScript(std::unordered_map<std::string,int>* var, std::string a, Equation* e) : Script(var), argument(a), equation(e){};
+    AssignmentScript(std::unordered_map<std::string,int>* var, const std::string& statement) : Script(var),
+    variable(&(*var)[statement.substr(0,statement.find('=') - 1)]),
+    equation(new Equation(var,statement.substr(statement.find('=') + 1 ))){};
 
     bool run() override {
-        (*vars)[argument] = equation->calculate();
+        *variable = equation->calculate();
         return true;
     };
 protected:
-    std::string argument;
+    int* variable;
     Equation* equation;
 
 };

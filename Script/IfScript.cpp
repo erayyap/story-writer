@@ -3,6 +3,7 @@
 //
 
 #include "IfScript.h"
+
 IfScript::IfScript(std::unordered_map<std::string, int> *var, std::string arg, ScriptVector *sv): Script(var), scriptVector(sv), hasElse(false), boolean(new BoolScript(var, arg)), el(
         nullptr) {}
 

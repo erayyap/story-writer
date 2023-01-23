@@ -13,9 +13,9 @@ public:
         while(boolean->run()) {
             scriptVector->run();
         }
+        return true;
     }
 private:
-    bool hasElse;
     BoolScript* boolean;
     ScriptVector* scriptVector;
 };
