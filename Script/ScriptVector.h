@@ -8,11 +8,13 @@
 #include <vector>
 #include <utility>
 #include <fstream>
+#include <queue>
 #include "AssignmentScript.h"
 #include "BoolScript.h"
 #include "DisplayScript.h"
-#include "IfScript.h"
-#include "WhileScript.h"
+#include "JumpScript.h"
+#include "ConditionalJumpScript.h"
+#include "../Reader/Line.h"
 
 enum ScriptType {
     EMPTY,
@@ -25,15 +27,17 @@ enum ScriptType {
     WHILE,
 };
 
-class ScriptVector {
-    static ScriptType determineType(const std::string& statement);
+class ScriptVector: public Script {
 
 public:
     explicit ScriptVector(std::vector<Script*>* s): scripts(s){};
     ScriptVector(std::unordered_map<std::string, int> *var, std::ifstream stream);
-    void run();
+    int run() override;
 private:
     std::vector<Script*>* scripts;
+    static ScriptType determineType(const std::string& line);
+    static int determineDepthWidth(std::vector<Line>* lines, int index);
+    static BoolScript* extractBoolFromParantheses(std::unordered_map<std::string, int> *var, const std::string& line);
 };
 
 

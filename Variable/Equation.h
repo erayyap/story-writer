@@ -4,12 +4,11 @@
 
 #ifndef STORY_MAKER_EQUATION_H
 #define STORY_MAKER_EQUATION_H
+#include <cctype>
 #include <string>
 #include <vector>
 #include <algorithm>
-#include <cctype>
 #include <unordered_map>
-#include <cstdint>
 #include <stack>
 #include "Token.h"
 

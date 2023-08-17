@@ -4,11 +4,13 @@
 
 #ifndef STORY_MAKER_TOKEN_H
 #define STORY_MAKER_TOKEN_H
-
-
-#include "Equation.h"
-
+#include <cstdint>
 class Token {
+    enum type {
+        NUMBER,
+        VARIABLE,
+        OPERATOR
+    };
 public:
     explicit Token(int num);
     ~Token();

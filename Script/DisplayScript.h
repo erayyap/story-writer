@@ -4,7 +4,7 @@
 
 #ifndef STORY_MAKER_DISPLAYSCRIPT_H
 #define STORY_MAKER_DISPLAYSCRIPT_H
-#include "Script.h"
+#include "VarScript.h"
 #include "../Variable/Equation.h"
 #include <iostream>
 
@@ -20,12 +20,12 @@ union Disp {
     }
 };
 
-class DisplayScript: public Script {
+class DisplayScript: public VarScript {
 public:
 
     DisplayScript(std::unordered_map<std::string, int> *var, std::string s);
 
-    bool run() override;
+    int run() override;
 private:
     std::vector<Disp> display;
 };

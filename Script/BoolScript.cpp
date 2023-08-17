@@ -3,7 +3,7 @@
 //
 #include "BoolScript.h"
 
-BoolScript::BoolScript(std::unordered_map<std::string, int> *var, std::string arg): Script(var)  {
+BoolScript::BoolScript(std::unordered_map<std::string, int> *var, std::string arg): VarScript(var)  {
     if(arg == "") {
         ope == TRUE;
         return;
@@ -43,6 +43,6 @@ BoolScript::BoolScript(std::unordered_map<std::string, int> *var, std::string ar
     RHS = new Equation(vars, arg.substr(index + space) );
 }
 
-bool BoolScript::run() {
+int BoolScript::run() {
     return LHS->calculate() == RHS->calculate();
 }

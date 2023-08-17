@@ -3,7 +3,7 @@
 //
 #include "DisplayScript.h"
 
-DisplayScript::DisplayScript(std::unordered_map<std::string,int>* var, std::string s): Script(var) {
+DisplayScript::DisplayScript(std::unordered_map<std::string,int>* var, std::string s): VarScript(var) {
     int index = 0;
     for(int i = 0; i < s.length();i ++) {
         if(s[i] == '"') {
@@ -20,9 +20,9 @@ DisplayScript::DisplayScript(std::unordered_map<std::string,int>* var, std::stri
     display.emplace_back(s.substr(index));
 }
 
-bool DisplayScript::run() {
+int DisplayScript::run() {
     //std::cout << display << std::endl;
-    return true;
+    return 1;
 }
 
 Disp::Disp(std::string s) {

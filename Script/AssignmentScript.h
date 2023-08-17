@@ -5,17 +5,17 @@
 #ifndef STORY_MAKER_ASSIGNMENTSCRIPT_H
 #define STORY_MAKER_ASSIGNMENTSCRIPT_H
 #include "../Variable/Equation.h"
-#include "Script.h"
+#include "VarScript.h"
 
-class AssignmentScript: public Script {
+class AssignmentScript: public VarScript {
 public:
-    AssignmentScript(std::unordered_map<std::string,int>* var, const std::string& statement) : Script(var),
+    AssignmentScript(std::unordered_map<std::string,int>* var, const std::string& statement) : VarScript(var),
     variable(&(*var)[statement.substr(0,statement.find('=') - 1)]),
     equation(new Equation(var,statement.substr(statement.find('=') + 1 ))){};
 
-    bool run() override {
+    int run() override {
         *variable = equation->calculate();
-        return true;
+        return 1;
     };
 protected:
     int* variable;

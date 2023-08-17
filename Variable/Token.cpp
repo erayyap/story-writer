@@ -5,7 +5,7 @@
 #include "Token.h"
 
 Token::Token(int num) {
-    type = 0;
+    type = NUMBER;
     this->num = num;
 }
 
@@ -14,12 +14,12 @@ Token::~Token() {
 }
 
 Token::Token(int *address) {
-    type = 1;
+    type = VARIABLE;
     numAddress = address;
 }
 
 Token::Token(char ope) {
-    type = 2;
+    type = OPERATOR;
     if(ope == '+') num = 1;
     if(ope == '-') num = 2;
     if(ope == '*') num = 3;
